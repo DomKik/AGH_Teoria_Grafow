@@ -47,5 +47,5 @@ Przykładowa zawartość pliku z grafem (bez komentarzy oznaczonych //):
 3 // wierzchołek_docelowy  
 
 OUTPUT:
-Na wyjściu zostaje wypisana najkrótsza długość między wierzchołek_startowy a wierzchołek_docelowy.
+Na wyjściu zostaje wypisana najmniejszy koszt dojścia z wierzchołek_startowy do wierzchołek_docelowy.
 
