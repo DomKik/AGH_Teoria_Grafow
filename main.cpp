@@ -20,6 +20,10 @@ struct Zadanie
 {
          vector< vector <Krawedz> > graf;
          int wierzcholek_poczatkowy, wierzcholek_docelowy;
+         ~Zadanie()
+         {
+                  graf.clear();
+         }
 };
 
 bool czy_liczba(char znak)
@@ -98,35 +102,54 @@ int Dijkstra(Zadanie &zadanie)
          int *odleglosci = new int[zadanie.graf.size()];
          for(int i=0; i<zadanie.graf.size(); i++) { odleglosci[i] = INFINITY; }
          odleglosci[poczatek] = 0;
+         cout << "ok1" << endl;
          bool visited[zadanie.graf.size()] = {false};
 
+
          priority_queue <Krawedz> wierzcholki_do_analizy;
+         cout << "ok2" << endl;
 
          wierzcholki_do_analizy.push({poczatek, odleglosci[poczatek]});
          visited[poczatek] = true;
 
          Krawedz *w;
+         cout << "ok3" << endl;
          while(!wierzcholki_do_analizy.empty())
          {
+                  cout << "ok4" << endl;
                   aktualny_wierzch = wierzcholki_do_analizy.top().wierzcholek;
+                  cout << "ok5" << endl;
                   wierzcholki_do_analizy.pop();
+                  cout << "ok6" << endl;
                   for(int i=0; i<zadanie.graf[aktualny_wierzch].size(); i++)
                   {
+                           cout << "ok7" << endl;
                            w = &zadanie.graf[aktualny_wierzch][i];
+                           cout << "ok8" << endl;
                            if(odleglosci[w->wierzcholek] > odleglosci[aktualny_wierzch] + w->waga)
                            {
+                                    cout << "ok9" << endl;
                                     odleglosci[w->wierzcholek] = odleglosci[aktualny_wierzch] + w->waga;
+                                    cout << "ok10" << endl;
                                     if(!visited[w->wierzcholek])
                                     {
+                                             cout << "ok11" << endl;
                                           visited[w->wierzcholek] = true;
+                                          cout << "ok12" << endl;
                                           wierzcholki_do_analizy.push({w->wierzcholek, odleglosci[w->wierzcholek]});
+                                          cout << "ok13" << endl;
                                     }
                            }
                   }
+                  cout << "ok14" << endl;
          }
+         cout << "ok15" << endl;
          wynik = odleglosci[zadanie.wierzcholek_docelowy];
+         cout << "ok16" << endl;
          delete w;
+         cout << "ok17" << endl;
          delete [] odleglosci;
+         cout << "ok18" << endl;
          return wynik;
 }
 
@@ -139,5 +162,6 @@ int main()
     Zadanie zadanie = wczytaj_dane_zadania(nazwa_pliku.c_str());
     int wynik = Dijkstra(zadanie);
     cout << "odleglosc z " << zadanie.wierzcholek_poczatkowy << " do " << zadanie.wierzcholek_docelowy << " wierzcholka = " << wynik << endl;
+    cout << "ok19" << endl;
     return 0;
 }
