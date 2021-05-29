@@ -135,6 +135,7 @@ int main()
     string nazwa_pliku;
     cout << "Podaj nazwe pliku, z ktorego chcesz wczytac dane: ";
     cin >> nazwa_pliku;
+    nazwa_pliku = "grafy/" + nazwa_pliku;
     Zadanie zadanie = wczytaj_dane_zadania(nazwa_pliku.c_str());
     int wynik = Dijkstra(zadanie);
     cout << "odleglosc z " << zadanie.wierzcholek_poczatkowy << " do " << zadanie.wierzcholek_docelowy << " wierzcholka = " << wynik << endl;
