@@ -15,16 +15,16 @@ Na wejściu należy podać nazwe pliku z grafem - najlepiej .txt
 WAŻNE: plik musi być w folderze grafy!!!
 Przykład: graf_testowy1.txt (Zauważ, że nie grafy/graf_testowy1.txt jak to może sugerować istnienie folderu "grafy")
 
-SZCZEGÓŁY DOT. PLIKU:
-format:
-[
-[ [wierzchołek_połączony_z_0_wierzchołkiem waga] [wierzchołek_połączony_z_0_wierzchołkiem waga] itd...]
-[ [wierzchołek_połączony_z_1_wierzchołkiem waga] itd...]
-itd...
-]
-wierzchołek_startowy
-wierzchołek_docelowy
-koniec pliku
+SZCZEGÓŁY DOT. PLIKU:  
+format:  
+[  
+[ [wierzchołek_połączony_z_0_wierzchołkiem waga] [wierzchołek_połączony_z_0_wierzchołkiem waga] itd...]  
+[ [wierzchołek_połączony_z_1_wierzchołkiem waga] itd...]  
+itd...  
+]  
+wierzchołek_startowy  
+wierzchołek_docelowy  
+koniec pliku  
 
 Założenia co do grafu w pliku:
 1. Wierzchołki numerujemy od 0.
