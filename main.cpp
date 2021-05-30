@@ -20,10 +20,6 @@ struct Zadanie
 {
          vector< vector <Krawedz> > graf;
          int wierzcholek_poczatkowy, wierzcholek_docelowy;
-         ~Zadanie()
-         {
-                  graf.clear();
-         }
 };
 
 bool czy_liczba(char znak)
@@ -92,6 +88,7 @@ Zadanie wczytaj_dane_zadania(const char *nazwa_pliku)
          else
          {
                   cerr << "Problem z otwarciem pliku!" << endl;
+                  zwracane.wierzcholek_poczatkowy = -1;
                   return zwracane;
          }
 }
@@ -140,7 +137,19 @@ int main()
     cin >> nazwa_pliku;
     nazwa_pliku = "grafy/" + nazwa_pliku;
     Zadanie zadanie = wczytaj_dane_zadania(nazwa_pliku.c_str());
-    int wynik = Dijkstra(zadanie);
-    cout << "odleglosc z " << zadanie.wierzcholek_poczatkowy << " do " << zadanie.wierzcholek_docelowy << " wierzcholka = " << wynik << endl;
+    if(zadanie.wierzcholek_poczatkowy >= 0 && zadanie.wierzcholek_docelowy >= 0)
+    {
+             int wynik = Dijkstra(zadanie);
+             if(wynik == INFINITY)
+             {
+                      cout << "oo, tzn. nie da sie dostac z " << zadanie.wierzcholek_poczatkowy << " do " << zadanie.wierzcholek_docelowy << endl;
+             }
+             else
+             {
+                      cout << "odleglosc z " << zadanie.wierzcholek_poczatkowy << " do ";
+                      cout << zadanie.wierzcholek_docelowy << " wierzcholka = " << wynik << endl;
+             }
+    }
+    else { cout << "Nieprawidlowy wierzcholek docelowy lub startowy!" << endl; }
     return 0;
 }
