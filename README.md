@@ -39,11 +39,11 @@ Założenia co do grafu w pliku:
 Przykładowa zawartość pliku z grafem (bez komentarzy oznaczonych //):
 
 [   
-[ [1 2] [2 5] [4 1] ] // sąsiedzi wierzchołka 0 wraz z wagami krawędzi łączącymi. tutaj sąsiadamy są wierzchołki: 1,2,4  
-[ [0 2] [3 3] ] // sąsiedzi wierzchołka 1 wraz z wagami krawędzi łączącymi. tutaj sąsiadamy są wierzchołki: 0,3  
-[ [0 5] ] // sąsiedzi wierzchołka 2 wraz z wagami krawędzi łączącymi. tutaj sąsiadamy są wierzchołki: 0  
-[ [1 3] ] // sąsiedzi wierzchołka 3 wraz z wagami krawędzi łączącymi. tutaj sąsiadamy są wierzchołki: 1  
-[ [0 1] ] // sąsiedzi wierzchołka 4 wraz z wagami krawędzi łączącymi. tutaj sąsiadamy są wierzchołki: 1  
+[ [1 2] [2 5] [4 1] ] // sąsiedzi wierzchołka 0 wraz z wagami krawędzi łączącymi. tutaj sąsiadami są wierzchołki: 1,2,4  
+[ [0 2] [3 3] ] // sąsiedzi wierzchołka 1 wraz z wagami krawędzi łączącymi. tutaj sąsiadami są wierzchołki: 0,3  
+[ [0 5] ] // sąsiedzi wierzchołka 2 wraz z wagami krawędzi łączącymi. tutaj sąsiadami są wierzchołki: 0  
+[ [1 3] ] // sąsiedzi wierzchołka 3 wraz z wagami krawędzi łączącymi. tutaj sąsiadami są wierzchołki: 1  
+[ [0 1] ] // sąsiedzi wierzchołka 4 wraz z wagami krawędzi łączącymi. tutaj sąsiadami są wierzchołki: 1  
 ]  
 1 // wierzchołek_startowy  
 3 // wierzchołek_docelowy  
