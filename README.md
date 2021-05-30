@@ -32,7 +32,8 @@ Założenia co do grafu w pliku:
 3. Wierzchołkami i wagi są wyłącznie liczbami naturalnymi (z zerem), nie większymi niż 2^31 - 1, aczkolwiek w praktyce program mógłby się wysypać na takiej liczbie wierzchołków oraz nie działać poprawnie na takich dużych wagach - dopuszczalne ilości wierzchołków i wartości wag to około 0-10000, na wyższych ilościach program nie był testowany.
 4. [] pierwszego stopnia (najbardziej zewnętrzne) oznaczają graf, [] drugiego stopnia (w środku [] pierwszego stopnia) oznaczają zbiór krawędzi wychodzących z i-tego wierzchołka (iterujemy od 0 do liczby_wierzchołków-1), [] trzeciego stopnia (najbardziej zagnieżdżone, między [] drugiego stopnia) zawierają 2 liczby, odpowiednio wierzchołek, z którym i-ty wierzchołek ma połączenie (w jedną stronę) oraz wagę tego połączenia. Tak jak na formacie wyżej.
 5. W pliku jest jeden graf (wiecej grafów niż jeden nie zostanie wczytanych), jeden wierzchołek startowy i jeden wierzchołek docelowy(ten do którego liczymy najkrótszą ścieżkę).
-6. Graf jest zapisany jakby był grafem skierowanym (istnienie krawędzi z wierzchołka 0 do 1 nie implikuje istnienia krawędzi z 1 do 0, trzeba to podać wprost, aby otrzymać graf nieskierowany)
+6. Graf jest zapisany jakby był grafem skierowanym (istnienie krawędzi z wierzchołka 0 do 1 nie implikuje istnienia krawędzi z 1 do 0, trzeba to podać wprost, aby otrzymać graf nieskierowany)  
+7. Plik ma mniej niż 273 KB (Błąd otwarcia pliku na testowanej maszynie).
 
 Przykładowa zawartość pliku z grafem (bez komentarzy oznaczonych //):
 
