@@ -32,18 +32,17 @@ Założenia co do grafu w pliku:
 3. Wierzchołkami i wagi są wyłącznie liczbami naturalnymi (z zerem), nie większymi niż 2^31 - 1, aczkolwiek w praktyce program mógłby się wysypać na takiej liczbie wierzchołków oraz nie działać poprawnie na takich dużych wagach - dopuszczalne ilości wierzchołków i wartości wag to około 0-10000, na wyższych ilościach program nie był testowany.
 4. [] pierwszego stopnia (najbardziej zewnętrzne) oznaczają graf, [] drugiego stopnia (w środku [] pierwszego stopnia) oznaczają zbiór krawędzi wychodzących z i-tego wierzchołka (iterujemy od 0 do liczby_wierzchołków-1), [] trzeciego stopnia (najbardziej zagnieżdżone, między [] drugiego stopnia) zawierają 2 liczby, odpowiednio wierzchołek, z którym i-ty wierzchołek ma połączenie (w jedną stronę) oraz wagę tego połączenia. Tak jak na formacie wyżej.
 5. W pliku jest jeden graf (wiecej grafów niż jeden nie zostanie wczytanych), jeden wierzchołek startowy i jeden wierzchołek docelowy(ten do którego liczymy najkrótszą ścieżkę).
-6. Graf jest zapisany jakby był grafem skierowanym (istnienie krawędzi z wierzchołka 0 do 1 nie implikuje istnienia krawędzi z 1 do 0, trzeba to podać wprost, aby otrzymać graf nieskierowany)  
-7. Plik ma 272 KB lub mniej (Błąd otwarcia pliku na testowanej maszynie przy większych rozmiarach).  
-8. Suma wag na dowolnej ścieżce nie przekracza 1073741824 = 2^30.  
+6. Graf jest zapisany jakby był grafem skierowanym (istnienie krawędzi z wierzchołka 0 do 1 nie implikuje istnienia krawędzi z 1 do 0, trzeba to podać wprost, aby otrzymać graf nieskierowany)   
+7. Suma wag na dowolnej ścieżce nie przekracza 1073741823 = 2^30 - 1.  
 
 Przykładowa zawartość pliku z grafem (bez komentarzy oznaczonych //):
 
 [ // poczatek grafu   
-[ [1 2] [2 5] [4 1] ] // sąsiedzi wierzchołka 0 wraz z wagami krawędzi łączącymi. tutaj sąsiadami są wierzchołki: 1,2,4  
-[ [0 2] [3 3] ] // sąsiedzi wierzchołka 1 wraz z wagami krawędzi łączącymi. tutaj sąsiadami są wierzchołki: 0,3  
-[ [0 5] ] // sąsiedzi wierzchołka 2 wraz z wagami krawędzi łączącymi. tutaj sąsiadami są wierzchołki: 0  
-[ [1 3] ] // sąsiedzi wierzchołka 3 wraz z wagami krawędzi łączącymi. tutaj sąsiadami są wierzchołki: 1  
-[ [0 1] ] // sąsiedzi wierzchołka 4 wraz z wagami krawędzi łączącymi. tutaj sąsiadami są wierzchołki: 0  
+[ [1 2] [2 5] [4 1] ] // sąsiedzi wierzchołka 0 wraz z wagami krawędzi łączącymi. tutaj sąsiadami są wierzchołki: 1,2,4 waga połączenia 0->1 to 2 itd...  
+[ [0 2] [3 3] ] // sąsiedzi wierzchołka 1 wraz z wagami krawędzi łączącymi. tutaj sąsiadami są wierzchołki: 0,3 waga połączenia 1->0 to 2 itd...  
+[ [0 5] ] // sąsiedzi wierzchołka 2 wraz z wagami krawędzi łączącymi. tutaj sąsiadami są wierzchołki: 0 waga połączenia 2->0 to 5 itd...  
+[ [1 3] ] // sąsiedzi wierzchołka 3 wraz z wagami krawędzi łączącymi. tutaj sąsiadami są wierzchołki: 1 waga połączenia 3->1 to 3 itd...  
+[ [0 1] ] // sąsiedzi wierzchołka 4 wraz z wagami krawędzi łączącymi. tutaj sąsiadami są wierzchołki: 0 waga połączenia 4->0 to 1 itd...  
 ] // koniec grafu  
 1 // wierzchołek_startowy  
 3 // wierzchołek_docelowy  
